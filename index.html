@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap initiation</title>
+    <title>Angular initiation</title>
 
     <!-- Add here the link to Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
     <style type="text/css">
       main { margin: 70px 0; }
@@ -75,102 +75,63 @@
         <section class="col-md-8">
           <div class="panel panel-info">
             <div class="panel-heading">
-              <small>Dialog with</small> <strong>Ken Bogard</strong>
+              <small>Dialog with</small> <strong><!-- TODO: insert user name here --></strong>
               <button class="btn btn-link btn-xs pull-right">
                 <span class="glyphicon glyphicon-chevron-down"></span>
               </button>
             </div>
-            <div class="panel-body" id="dialog">
+            <div class="panel-body">
               <div class="row">
                 <div class="col-md-8">
-                  <div class="alert alert-success">
-                    Hi there!
+                  <div class="alert alert-success clearfix">
+                    <!-- TODO: insert message text here -->
                     <div class="pull-right">
-                      <small class="text-info">12:57</small>
+                      <small class="text-info"><!-- TODO: insert message time here --></small>
                       <button class="btn btn-link btn-xs">
                         <span class="glyphicon glyphicon-trash"></span>
                       </button>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-8 col-md-offset-4">
-                  <div class="alert alert-warning">
-                    Hey, hello you!<br>
-                    What's up?
-                    <div class="pull-right">
-                      <small class="text-info">13:05</small>
-                      <button class="btn btn-link btn-xs">
-                        <span class="glyphicon glyphicon-trash"></span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-8">
-                  <div class="alert alert-success">
-                    Same old, same old.<br>
-                    Wanna come'n play some SFV?!
-                    <div class="pull-right">
-                      <small class="text-info">13:16</small>
-                      <button class="btn btn-link btn-xs">
-                        <span class="glyphicon glyphicon-trash"></span>
-                      </button>
-                    </div>
-                  </div>
-                </div>                
               </div>
             </div>
             <div class="panel-footer">
-              <form>
+              <form novalidate>
                 <div class="form-group">
-                  <textarea id="message" class="form-control text-left" rows="3" placeholder="New message">Test</textarea>
+                  <textarea class="form-control text-left" rows="3" placeholder="New message"></textarea>
                 </div>
-                <div id="align-btns" class="btn-group btn-group-sm">
-                  <button class="btn btn-default active">
+                <div class="btn-group btn-group-sm">
+                  <button type='button' class="btn btn-default">
                     <span class="glyphicon glyphicon-align-left"></span>
                   </button>
-                  <button class="btn btn-default">
+                  <button type='button' class="btn btn-default">
                     <span class="glyphicon glyphicon-align-center"></span>
                   </button>
-                  <button class="btn btn-default">
+                  <button type='button' class="btn btn-default">
                     <span class="glyphicon glyphicon-align-right"></span>
                   </button>
                 </div>
-                <button id="send-btn" class="btn btn-success pull-right btn-sm">
+                <button class="btn btn-success pull-right btn-sm">
                   <span class="glyphicon glyphicon-send"></span>
                   Send!
                 </button>
               </form>
             </div>
           </div>
-        </section> 
+        </section>
       </div>
     </main>
     <footer class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
         <button class="btn btn-default navbar-btn">Privacy &amp; Terms</button>
         <div class="navbar-right">
-          <p class="navbar-text">&copy; 2017 - Olivier Ertz &amp; Mathias Oberson</p>
+          <p class="navbar-text">&copy; 2017 - Olivier Ertz &amp; Mathias Oberson &amp; Simon Oulevay</p>
         </div>
       </div>
     </footer>
 
-    <script type="text/template" id="new-sent-message">
-      <div class="col-md-8 col-md-offset-4">
-        <div class="alert alert-warning">
-          <span class="msg-content">
-            <!-- The text goes here -->
-          </span>
-          <div class="pull-right">
-            <small class="text-info"><!-- The time goes here --></small>
-            <button class="btn btn-link btn-xs">
-              <span class="glyphicon glyphicon-trash"></span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </script>
-
-    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/angular.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
