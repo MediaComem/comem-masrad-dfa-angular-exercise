@@ -4,7 +4,7 @@ This repository contains a starter project for an Angular exercise in the MAS-RA
 
 ## Exercise
 
-The following step describes what you need to do to have a functional chat panel (on the right of the interface) with which you can add and remove messages, and change the text alignment.
+The following step describes what you need to do to have a functional chat panel (on the right of the interface) with which you can add and remove messages.
 The rest of the interface will be implemented in future exercises.
 
 ### Basic module and controller
