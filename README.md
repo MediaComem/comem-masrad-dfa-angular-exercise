@@ -14,7 +14,7 @@ The rest of the interface will be implemented in future exercises.
   * The controller should be a named controller (it should store `this` in a variable, e.g. `var chatPanelCtrl = this;`)
   * You should attach the controller to the `<div class="panel ...">` tag by adding the attribute `ng-controller="ChatPanelController as chatPanelCtrl"`
 * Add a `chatPanelCtrl.user` variable to your controller containing the name of the person with whom you are chatting, e.g. `Ken Bogard`
-* Use Angular's double braces to insert this variable into the `<small>Dialog with ...</small>` tag in the view
+* Use Angular's double braces to insert this variable into the `<strong><!-- TODO: insert user name here --></strong>` tag in the view
 
 ### Get and display the list of messages
 
