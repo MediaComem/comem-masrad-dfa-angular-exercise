@@ -16,7 +16,8 @@
     </style>
 
   </head>
-  <body>
+  <!-- The DiaLog Angular module controls the whole body of the HTML page -->
+  <body ng-app="DiaLog">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <a class="navbar-brand">DiaLog</a>
@@ -73,21 +74,28 @@
           </div>
         </section>
         <section class="col-md-8">
-          <div class="panel panel-info">
+          <!-- This panel is controlled by `ChatPanelController` -->
+          <div class="panel panel-info" ng-controller="ChatPanelController as chatPanelCtrl">
             <div class="panel-heading">
-              <small>Dialog with</small> <strong><!-- TODO: insert user name here --></strong>
+              <!-- The name of the person the user is chatting with is displayed here -->
+              <small>Dialog with</small> <strong>{{ chatPanelCtrl.user }}</strong>
               <button class="btn btn-link btn-xs pull-right">
                 <span class="glyphicon glyphicon-chevron-down"></span>
               </button>
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-8">
-                  <div class="alert alert-success clearfix">
-                    <!-- TODO: insert message text here -->
+                <!-- This div is repeated for each message and optionally has the col-md-offset-4 class if `message.mine` is true -->
+                <div class="col-md-8" ng-repeat="message in chatPanelCtrl.messages" ng-class="{'col-md-offset-4': message.mine}">
+                  <!-- This alert has the class alert-warning or alert-success depending on whether `message.mine` is true or not -->
+                  <div class="alert alert-success clearfix" ng-class="{'alert-warning': message.mine, 'alert-success': !message.mine}">
+                    <!-- The message text is displayed here -->
+                    {{ message.text }}
                     <div class="pull-right">
-                      <small class="text-info"><!-- TODO: insert message time here --></small>
-                      <button class="btn btn-link btn-xs">
+                      <!-- The message time is piped through Angular's date filter and displayed here -->
+                      <small class="text-info">{{ message.time | date: 'HH:MM' }}</small>
+                      <!-- The button calls `chatPanelCtrl.removeMessage(message)` when clicked -->
+                      <button class="btn btn-link btn-xs" ng-click="chatPanelCtrl.removeMessage(message)">
                         <span class="glyphicon glyphicon-trash"></span>
                       </button>
                     </div>
@@ -96,9 +104,11 @@
               </div>
             </div>
             <div class="panel-footer">
-              <form novalidate>
+              <!-- The form calls `chatPanelCtrl.addMessage()` when submitted -->
+              <form name="messageForm" novalidate ng-submit="chatPanelCtrl.addMessage()">
                 <div class="form-group">
-                  <textarea class="form-control text-left" rows="3" placeholder="New message"></textarea>
+                  <!-- This field is bound to the `chatPanelCtrl.text` variable, and is required -->
+                  <textarea class="form-control text-left" rows="3" placeholder="New message" name="text" ng-model="chatPanelCtrl.text" required></textarea>
                 </div>
                 <div class="btn-group btn-group-sm">
                   <button type='button' class="btn btn-default">
@@ -111,7 +121,8 @@
                     <span class="glyphicon glyphicon-align-right"></span>
                   </button>
                 </div>
-                <button class="btn btn-success pull-right btn-sm">
+                <!-- The submit button is disabled if the form is invalid -->
+                <button class="btn btn-success pull-right btn-sm" ng-disabled="messageForm.$invalid">
                   <span class="glyphicon glyphicon-send"></span>
                   Send!
                 </button>
