@@ -48,6 +48,26 @@ The rest of the interface will be implemented in future exercises.
   * It should remove that message from `chatPanelCtrl.messages`
   * Add an `ng-click` attribute to the `<button ...>` tag with the trash icon to call your `chatPanelCtrl.removeMessage` function with the current message
 
+**Tip:** how to remove an element from an array in JavaScript
+
+```js
+var array = [ 'a', 'b', 'c' ];
+
+function removeFromArray(element) {
+  var indexOfElement = array.indexOf(element);
+  array.splice(indexOfElement, 1);
+}
+
+removeFromArray('b');
+console.log(array); // [ 'a', 'c' ]
+```
+
+### Validating the message form
+
+* Add a name to the `<form>` and `<textarea>`
+* Add a `required` attribute to the `<textarea>` to mark this field as required
+* Add an `ng-disabled` attribute to the last `<button>` in the form to disable it if the form is invalid
+
 ## Data service
 
 ```js
