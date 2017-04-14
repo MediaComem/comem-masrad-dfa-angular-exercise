@@ -29,7 +29,7 @@ The rest of the interface will be implemented in future exercises.
   ```
 * Add an `ng-repeat` attribute to the `<div class="col-md-8">` tag to repeat it for each message in the `chatPanelCtrl.messages` variable we just created
 * Insert the message's text into the template
-* Insert the message's time into the template, use the `date` filter to display a human-friendly version (e.g. with the format string `dd.mm.yyyy HH:MM`)
+* Insert the message's time into the template, use the `date` filter to display a human-friendly version (e.g. with the format string `dd.mm.yyyy HH:mm`)
 * On the same tag as the `ng-repeat`, add an `ng-class` attribute to conditionally apply the `col-md-offset-4` class for your messages (when `message.mine` is true)
 * On the `<div class="alert ...">` tag, remove the hardcoded `alert-success` class and add an `ng-class` attribute to conditionally apply the `alert-warning` and `alert-success` classes for messages based on whether they are yours (you can use `message.mine` or `!message.mine` as conditions)
 
